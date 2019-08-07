@@ -4,7 +4,8 @@
 // This file is released under the 3-clause BSD license. Note however that Linux
 // support depends on libusb, released under GNU LGPL 2.1 or later.
 
-// +build !linux,!darwin,!windows ios !cgo
+// +build!linux,!darwin,!windows ios !cgo
+// +build linux,cgo darwin,!ios,cgo windows,cgo
 
 package hid
 
@@ -49,3 +50,4 @@ func (dev *Device) Write(b []byte) (int, error) {
 func (dev *Device) Read(b []byte) (int, error) {
 	return 0, ErrUnsupportedPlatform
 }
+

@@ -7,7 +7,8 @@
 // https://github.com/orofarne/gowchar/blob/master/LICENSE
 
 // +build !ios
-// +build linux darwin windows
+// +buildlinux darwin windows
+// +build !linux,!darwin,!windows ios !cgo
 
 package hid
 
@@ -225,3 +226,4 @@ func wchar4NToString(s *C.wchar_t, size C.size_t) (string, error) {
 	}
 	return res, nil
 }
+
